@@ -1,0 +1,10 @@
+{% for project in projects %}
+<a href="{% url 'project_detail' project.name %}">{{ project.name }}</a><br>
+{% endfor %}
+
+<h1> Register a new project </h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Register Project</button>
+</form>
